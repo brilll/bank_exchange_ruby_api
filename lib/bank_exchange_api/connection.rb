@@ -17,7 +17,7 @@ module BankExchangeApi
     def headers
       {
           'Accept' => 'application/json',
-          'Authorization' => "Token token=#{cli.config.api_token!}",
+          'X-Api-Token' => cli.config.api_token!,
           'X-Client' => 'bank_exchange_ruby_api',
           'X-Client-Version' => VERSION
       }
