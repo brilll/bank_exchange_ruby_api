@@ -3,6 +3,7 @@ require 'bank_exchange_api/version'
 require 'bank_exchange_api/errors'
 require 'bank_exchange_api/config'
 require 'bank_exchange_api/connection'
+require 'bank_exchange_api/bm'
 
 module BankExchangeApi
   class Cli
