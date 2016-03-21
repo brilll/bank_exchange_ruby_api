@@ -24,7 +24,16 @@ module BankExchangeApi
     end
 
     def get(uri)
-      transport.get(uri, headers)
+      bm "[GET %{ms}ms.] #{uri}" do
+        transport.get(uri, headers)
+      end
+    end
+
+    private
+
+    def bm(message, &block)
+      cb = -> (ms) { cli.info(message % {ms: ms}) }
+      Bm.measure(cb, &block)
     end
   end
 end
