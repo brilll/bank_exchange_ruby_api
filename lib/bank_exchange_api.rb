@@ -4,6 +4,8 @@ require 'bank_exchange_api/errors'
 require 'bank_exchange_api/config'
 require 'bank_exchange_api/connection'
 require 'bank_exchange_api/bm'
+require 'bank_exchange_api/response'
+require 'bank_exchange_api/request'
 
 module BankExchangeApi
   class Cli
@@ -26,6 +28,11 @@ module BankExchangeApi
 
     def info(value)
       logger && logger.info(value)
+    end
+
+    # @return [Boolean]
+    def ping
+      Request::Ping.new(self).json.success?
     end
   end
 end
