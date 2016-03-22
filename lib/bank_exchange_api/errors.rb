@@ -11,4 +11,7 @@ module BankExchangeApi
   # Raise when class passed into a Param accessor is unsupported
   class UnsupportedParamClass < Error
   end
+
+  class MissingRequiredParam < Error
+  end
 end
