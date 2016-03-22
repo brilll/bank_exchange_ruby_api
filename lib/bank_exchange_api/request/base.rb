@@ -15,12 +15,8 @@ module BankExchangeApi::Request
       cli.connection.get(*args)
     end
 
-    def json
+    def json(root: nil)
       BankExchangeApi::Response::Json.new(get(query), root: root)
-    end
-
-    def root
-      nil
     end
 
     def path

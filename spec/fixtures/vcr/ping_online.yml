@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bank.exchange/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - x-api-token
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 22 Mar 2016 09:42:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"b41c090e9b32a3f85c631db1af38b0af"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e0d756f8-4dfc-412c-bb5c-3daba72c4a27
+      X-Runtime:
+      - '0.015067'
+    body:
+      encoding: UTF-8
+      string: '{"ping":"pong"}'
+    http_version: 
+  recorded_at: Tue, 22 Mar 2016 09:42:20 GMT
+recorded_with: VCR 3.0.1

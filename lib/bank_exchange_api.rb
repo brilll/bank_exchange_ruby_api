@@ -34,5 +34,9 @@ module BankExchangeApi
     def ping
       Request::Ping.new(self).json.success?
     end
+
+    def banks
+      Request::Banks.new(self)
+    end
   end
 end

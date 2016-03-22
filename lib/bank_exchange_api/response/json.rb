@@ -13,5 +13,9 @@ module BankExchangeApi::Response
     def data
       root ? body[root.to_s] : body
     end
+
+    def inspect
+      data
+    end
   end
 end

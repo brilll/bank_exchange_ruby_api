@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BankExchangeApi::Config do
+RSpec.describe BankExchangeApi::Config do
   subject do
     Class.new(described_class) do
       conf_accessor :param

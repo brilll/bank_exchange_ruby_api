@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BankExchangeApi::Bm do
+RSpec.describe BankExchangeApi::Bm do
 
   subject do
     described_class.measure(cb) do
