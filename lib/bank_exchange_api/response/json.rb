@@ -2,6 +2,11 @@ require 'json'
 
 module BankExchangeApi::Response
   class Json < Base
+
+    extend Forwardable
+
+    def_delegators :data, :each
+
     def body
       @body ||= JSON.parse(http.body)
     end
