@@ -31,9 +31,15 @@ module BankExchangeApi
       logger && logger.info(value)
     end
 
+    def error(value)
+      logger && logger.error(value)
+    end
+
     # @return [Boolean]
     def ping
       Request::Ping.new(self).json.success?
+    rescue BankExchangeApi::UnsuccessfulResponse
+      false
     end
 
     def banks(params={})

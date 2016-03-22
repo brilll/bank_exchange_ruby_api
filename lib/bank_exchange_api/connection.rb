@@ -25,11 +25,19 @@ module BankExchangeApi
 
     def get(uri)
       bm :GET, uri do
-        transport.get(uri, headers)
+        transport.get(uri, headers).tap do |http|
+          error(uri, http) unless http.is_a?(Net::HTTPOK)
+        end
       end
     end
 
     private
+
+    def error(uri, http)
+      message = "[#{http.code}] ERROR: #{http.body} while processing #{uri}"
+      cli.error(message)
+      raise UnsuccessfulResponse, message
+    end
 
     def bm(prefix, message, &block)
       cb = -> (ms) { cli.info("[#{prefix} #{ms}ms.] #{message}") }

@@ -20,6 +20,12 @@ RSpec.describe BankExchangeApi do
     end
   end
 
+  describe 'Unsuccessful Response', vcr: {cassette_name: 'unsuccessful_response'} do
+    it {
+      expect{ subject.banks(currencies: :LOREM).json }.to raise_error(BankExchangeApi::UnsuccessfulResponse, /should be 3 characters/)
+    }
+  end
+
   describe '#banks', vcr: {cassette_name: 'banks'} do
     let(:json) do
       subject.banks(currencies: :USD).json

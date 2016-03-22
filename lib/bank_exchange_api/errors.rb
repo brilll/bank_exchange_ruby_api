@@ -14,4 +14,8 @@ module BankExchangeApi
 
   class MissingRequiredParam < Error
   end
+
+  # When server responses not 2xx
+  class UnsuccessfulResponse < Error
+  end
 end

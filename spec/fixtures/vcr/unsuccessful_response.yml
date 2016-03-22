@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bank.exchange/banks?countries=&currencies=LOREM
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - X-Api-Token
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 22 Mar 2016 13:36:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 35bd0bbe-7180-4255-9bc1-15d1afada816
+      X-Runtime:
+      - '0.007274'
+    body:
+      encoding: UTF-8
+      string: '{"error":422,"message":"Currencies ''LOREM'' param is the wrong length
+        (should be 3 characters)"}'
+    http_version: 
+  recorded_at: Tue, 22 Mar 2016 13:36:07 GMT
+recorded_with: VCR 3.0.1
