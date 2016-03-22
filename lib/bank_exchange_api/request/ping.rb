@@ -1,7 +1,7 @@
 module BankExchangeApi::Request
   class Ping < Base
 
-    def path
+    def endpoint
       '/'
     end
   end

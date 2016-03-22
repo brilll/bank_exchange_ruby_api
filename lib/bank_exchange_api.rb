@@ -4,6 +4,7 @@ require 'bank_exchange_api/errors'
 require 'bank_exchange_api/config'
 require 'bank_exchange_api/connection'
 require 'bank_exchange_api/bm'
+require 'bank_exchange_api/param'
 require 'bank_exchange_api/response'
 require 'bank_exchange_api/request'
 
@@ -35,8 +36,8 @@ module BankExchangeApi
       Request::Ping.new(self).json.success?
     end
 
-    def banks
-      Request::Banks.new(self)
+    def banks(params={})
+      Request::Banks.new(self, params)
     end
   end
 end
