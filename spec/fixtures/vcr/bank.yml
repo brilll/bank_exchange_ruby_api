@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bank.exchange/banks/XXXXXXXX?currencies=EUR&date&fallback_days
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - c64aa982-3720-40de-ab25-51bbbb605dfb
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 23 Mar 2016 08:30:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"fdb1f6896ece9743d949eddf2c795e34"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e0224a26-0d73-4d08-83b8-c8a509ec75eb
+      X-Runtime:
+      - '0.130551'
+    body:
+      encoding: UTF-8
+      string: '{"params":{"swift":"XXXXXXXX","currencies":["EUR"],"date":null,"fallback_days":4},"bank":{"swift":"XXXXXXXX","name":"Board
+        of Governors of the Federal Reserve System","country":"US","currency":"USD","website":"http://www.federalreserve.gov"},"rates":[{"iso_from":"USD","iso_to":"EUR","rate":0.916086478563577,"inverse_rate":1.0916,"date":"2016-12-29"}]}'
+    http_version: 
+  recorded_at: Wed, 23 Mar 2016 08:30:59 GMT
+recorded_with: VCR 3.0.1

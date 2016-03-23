@@ -48,4 +48,27 @@ RSpec.describe BankExchangeApi do
       expect(json.params).to eq(params)
     }
   end
+
+  describe '#bank', vcr: {cassette_name: 'bank'} do
+    let(:json) do
+      subject.bank('XXXXXXXX', currencies: :EUR).json
+    end
+
+    let(:data) do
+      [{"iso_from"=>"USD",
+        "iso_to"=>"EUR",
+        "rate"=>0.916086478563577,
+        "inverse_rate"=>1.0916,
+        "date"=>"2016-12-29"}]
+    end
+
+    let(:params) do
+      {"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>nil, "fallback_days"=>4}
+    end
+
+    it {
+      expect(json.data).to eq(data)
+      expect(json.params).to eq(params)
+    }
+  end
 end
