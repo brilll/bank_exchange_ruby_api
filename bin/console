@@ -4,7 +4,10 @@ require "bundler/setup"
 require "bank_exchange_api"
 require "pry"
 require "logger"
+require "dotenv"
 
+Dotenv.load
+BankExchangeApi::Config.api_token = ENV.fetch('BANK_EXCHANGE_API_TOKEN')
 BankExchangeApi::Config.logger = Logger.new(STDOUT)
 
 # You can add fixtures and/or initialization code here to make experimenting
