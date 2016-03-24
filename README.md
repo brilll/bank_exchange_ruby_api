@@ -28,7 +28,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   @cli.ping #=> true
 ```
 
-## Banks [response methods overview]
+## Banks list [response methods overview]
 
 ```ruby
   # @option countries [Array]
@@ -61,19 +61,19 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {params: {"countries"=>["US"], "currencies"=>["USD"]}, banks: [{"swift"=>"XXXXXXXX", "name"=>"Board of Governors of the Federal Reserve System", "country"=>"US", "currency"=>"USD", "website"=>"http://www.federalreserve.gov"}]} 
 ```
 
-## Bank
+## Bank overview
 
 ```ruby
   # @param swift [String]
   # @option currencies [Array]
   # @option date [Date,String]
-  # @option fallback_days [INteger]
+  # @option fallback_days [Integer]
   response = @cli.bank("XXXXXXXX", date: Date.today, currencies: ['EUR']).json
 ```
 
 ```ruby  
   response.params
-  {"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>4}  
+  {"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>5}  
 ```
 
 ```ruby  
@@ -84,4 +84,30 @@ This is the Ruby API client for the BankExchange service. Please read the offici
 ```ruby  
   response.body
   {"params"=>{"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>4}, "bank"=>{"swift"=>"XXXXXXXX", "name"=>"Board of Governors of the Federal Reserve System", "country"=>"US", "currency"=>"USD", "website"=>"http://www.federalreserve.gov"}, "rates"=>[{"iso_from"=>"USD", "iso_to"=>"EUR", "rate"=>0.885582713425434, "inverse_rate"=>1.1292, "date"=>"2016-03-18"}]}    
+```
+
+## Rates list
+
+```ruby
+  # @param swift [Array]
+  # @option iso_from [Array]
+  # @option iso_to [Array]
+  # @option date [Date,String]
+  # @option fallback_days [Integer]
+  response = @cli.rates(date: Date.today, iso_from: ['BYR'], iso_to: ['USD']).json
+```
+
+```ruby  
+  response.params
+  {"date"=>"2016-03-24", "swift"=>[], "iso_from"=>["BYR"], "iso_to"=>["USD"], "fallback_days"=>5}   
+```
+
+```ruby  
+  response.data
+  [{"iso_from"=>"BYR", "iso_to"=>"USD", "rate"=>4.96007142502852e-05, "inverse_rate"=>20161.0, "swift"=>"NBRBBY2X", "date"=>"2016-03-24"}]    
+```
+
+```ruby  
+  response.data
+  {"params"=>{"date"=>"2016-03-24", "swift"=>[], "iso_from"=>["BYR"], "iso_to"=>["USD"], "fallback_days"=>5}, "rates"=>[{"iso_from"=>"BYR", "iso_to"=>"USD", "rate"=>4.96007142502852e-05, "inverse_rate"=>20161.0, "swift"=>"NBRBBY2X", "date"=>"2016-03-24"}]}      
 ```

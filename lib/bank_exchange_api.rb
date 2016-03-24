@@ -49,5 +49,9 @@ module BankExchangeApi
     def bank(swift, params={})
       Request::Bank.new(self, params.merge(swift: swift))
     end
+
+    def rates(params={})
+      Request::Rates.new(self, params)
+    end
   end
 end

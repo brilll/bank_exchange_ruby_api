@@ -4,5 +4,6 @@ module BankExchangeApi
     autoload :Ping  , 'bank_exchange_api/request/ping'
     autoload :Banks , 'bank_exchange_api/request/banks'
     autoload :Bank  , 'bank_exchange_api/request/bank'
+    autoload :Rates , 'bank_exchange_api/request/rates'
   end
 end
