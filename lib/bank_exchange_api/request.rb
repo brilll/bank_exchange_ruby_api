@@ -5,5 +5,6 @@ module BankExchangeApi
     autoload :Banks , 'bank_exchange_api/request/banks'
     autoload :Bank  , 'bank_exchange_api/request/bank'
     autoload :Rates , 'bank_exchange_api/request/rates'
+    autoload :Rate  , 'bank_exchange_api/request/rate'
   end
 end

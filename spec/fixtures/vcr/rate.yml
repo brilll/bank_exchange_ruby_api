@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bank.exchange/rates/BYR?date=2016-01-01&fallback_days&iso_from=BYR&iso_to=RUB
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - x-api-token
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 0.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 25 Mar 2016 15:18:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"e46bc13897485efb8aa4231a13cef329"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - df52a543-f366-483e-97c2-85b594bf55e7
+      X-Runtime:
+      - '0.150977'
+    body:
+      encoding: UTF-8
+      string: '{"params":{"iso_code":"BYR","date":"2016-01-01","iso_from":["BYR"],"iso_to":["RUB"],"fallback_days":5},"rates":[{"iso_from":"BYR","iso_to":"RUB","rate":0.00391650021540751,"inverse_rate":255.33,"swift":"NBRBBY2X","date":"2016-01-01"}]}'
+    http_version: 
+  recorded_at: Fri, 25 Mar 2016 15:18:40 GMT
+recorded_with: VCR 3.0.1

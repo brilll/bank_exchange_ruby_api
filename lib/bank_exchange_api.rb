@@ -53,5 +53,9 @@ module BankExchangeApi
     def rates(params={})
       Request::Rates.new(self, params)
     end
+
+    def rate(iso_code, params={})
+      Request::Rate.new(self, params.merge(iso_code: iso_code))
+    end
   end
 end
