@@ -6,6 +6,12 @@
 
 This is the Ruby API client for the BankExchange service. Please read the official documentation to get further information http://bank.exchange/documentation
 
+## Installation
+
+```bash
+  gem install bank_exchange_api
+```
+
 ## Configuration
 
 ```ruby
