@@ -46,6 +46,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   response.next_page_url    # next page URL if resource is paginatable
   response.paginatable?     # if resource is paginatable and next page exists
   response.not_paginatable?
+  response.success?         #=> true if response status code is 2xx
 ```
 
 ## Banks list 
@@ -57,10 +58,6 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   request.currencies = ['USD']
   
   response = request.json
-```
-
-```ruby
-  response.success? #=> true
 ```
 
 ```ruby
@@ -85,15 +82,15 @@ This is the Ruby API client for the BankExchange service. Please read the offici
 
 ```ruby
   # @param swift [String]
-  # @option currencies [Array]
+  # @option iso_to [Array]
   # @option date [Date,String]
   # @option fallback_days [Integer]
-  response = @cli.bank("XXXXXXXX", date: Date.today, currencies: ['EUR']).json
+  response = @cli.bank("XXXXXXXX", date: Date.today, iso_to: ['EUR']).json
 ```
 
 ```ruby  
   response.params
-  {"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>5}  
+  {"swift"=>"XXXXXXXX", "iso_to"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>5}  
 ```
 
 ```ruby  
@@ -103,7 +100,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
 
 ```ruby  
   response.body
-  {"params"=>{"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>4}, "bank"=>{"swift"=>"XXXXXXXX", "name"=>"Board of Governors of the Federal Reserve System", "country"=>"US", "currency"=>"USD", "website"=>"http://www.federalreserve.gov"}, "rates"=>[{"iso_from"=>"USD", "iso_to"=>"EUR", "rate"=>0.885582713425434, "inverse_rate"=>1.1292, "date"=>"2016-03-18"}]}    
+  {"params"=>{"swift"=>"XXXXXXXX", "iso_to"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>4}, "bank"=>{"swift"=>"XXXXXXXX", "name"=>"Board of Governors of the Federal Reserve System", "country"=>"US", "currency"=>"USD", "website"=>"http://www.federalreserve.gov"}, "rates"=>[{"iso_from"=>"USD", "iso_to"=>"EUR", "rate"=>0.885582713425434, "inverse_rate"=>1.1292, "date"=>"2016-03-18"}]}    
 ```
 
 ```ruby  
