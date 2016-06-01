@@ -1,3 +1,7 @@
+## 1.0.2
+* BUG FIXES
+    * Fix standalone usage
+    
 ## 1.0.1
 
 * REMOVALS

@@ -1,3 +1,6 @@
+require 'date'
+require 'uri'
+
 module BankExchangeApi
   module Request
     class Base
