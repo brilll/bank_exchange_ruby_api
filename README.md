@@ -34,7 +34,21 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   @cli.ping #=> true
 ```
 
-## Banks list [response methods overview]
+## Response methods 
+```
+  request = @cli.banks(countries: ['US']) 
+  response = request.json
+  
+  response.data             # root-data of the endpoint  
+  response.body             # whole response data
+  reponse.params            # request params in response
+  response.pagination       # pagination params
+  response.next_page_url    # next page URL if resource is paginatable
+  response.paginatable?     # if resource is paginatable and next page exists
+  response.not_paginatable?
+```
+
+## Banks list 
 
 ```ruby
   # @option countries [Array]
@@ -97,7 +111,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}   
 ```
 
-> Please use a pagination by providing a block
+> :warning: Please usepagination by providing a block
 
 ```ruby
   data = []
@@ -135,7 +149,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>false, "per_page"=>200, "next_page_url"=>"http://api.bank.exchange/rates?iso_from=&iso_to=&page=2&swift="}    
 ```
 
-> Please use a pagination by providing a block
+> :warning: Please usepagination by providing a block
 
 ```ruby
   data = []
@@ -173,7 +187,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}     
 ```
 
-> Please use a pagination by providing a block
+> :warning: Please usepagination by providing a block
 
 ```ruby
   data = []
