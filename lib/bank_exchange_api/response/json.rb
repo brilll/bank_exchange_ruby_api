@@ -1,3 +1,4 @@
+require 'forwardable'
 require 'json'
 
 module BankExchangeApi::Response
