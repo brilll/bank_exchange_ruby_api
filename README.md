@@ -92,6 +92,18 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"params"=>{"swift"=>"XXXXXXXX", "currencies"=>["EUR"], "date"=>"2016-03-22", "fallback_days"=>4}, "bank"=>{"swift"=>"XXXXXXXX", "name"=>"Board of Governors of the Federal Reserve System", "country"=>"US", "currency"=>"USD", "website"=>"http://www.federalreserve.gov"}, "rates"=>[{"iso_from"=>"USD", "iso_to"=>"EUR", "rate"=>0.885582713425434, "inverse_rate"=>1.1292, "date"=>"2016-03-18"}]}    
 ```
 
+```ruby  
+  response.pagination
+  {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}   
+```
+
+> Please use a pagination by providing a block
+
+```ruby
+  data = []
+  @cli.bank("XXXXXXXX").json{ |response| data.concat(response.data)  }     
+```
+
 ## Rates list
 
 ```ruby
@@ -116,6 +128,18 @@ This is the Ruby API client for the BankExchange service. Please read the offici
 ```ruby  
   response.data
   {"params"=>{"date"=>"2016-03-24", "swift"=>[], "iso_from"=>["BYR"], "iso_to"=>["USD"], "fallback_days"=>5}, "rates"=>[{"iso_from"=>"BYR", "iso_to"=>"USD", "rate"=>4.96007142502852e-05, "inverse_rate"=>20161.0, "swift"=>"NBRBBY2X", "date"=>"2016-03-24"}]}      
+```
+
+```ruby  
+  response.pagination
+  {"current_page"=>1, "last_page"=>false, "per_page"=>200, "next_page_url"=>"http://api.bank.exchange/rates?iso_from=&iso_to=&page=2&swift="}    
+```
+
+> Please use a pagination by providing a block
+
+```ruby
+  data = []
+  @cli.rates.json{ |response| data.concat(response.data) }     
 ```
 
 ## Rate overview
@@ -144,3 +168,14 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"params"=>{"iso_code"=>"BYR", "date"=>"2016-03-25", "iso_from"=>["BYR"], "iso_to"=>["RUB"], "fallback_days"=>5}, "rates"=>[{"iso_from"=>"BYR", "iso_to"=>"RUB", "rate"=>0.00340193910529002, "inverse_rate"=>293.95, "swift"=>"NBRBBY2X", "date"=>"2016-03-25"}]}       
 ```
 
+```ruby  
+  response.pagination
+  {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}     
+```
+
+> Please use a pagination by providing a block
+
+```ruby
+  data = []
+  @cli.rate('BYR').json{ |response| data.concat(response.data) }  
+```

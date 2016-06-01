@@ -15,6 +15,14 @@ module BankExchangeApi::Response
       body.fetch('params', {})
     end
 
+    def pagination
+      body.fetch('pagination', {})
+    end
+
+    def next_page_url
+      pagination['next_page_url']
+    end
+
     def data
       root ? body[root.to_s] : body
     end

@@ -18,8 +18,14 @@ module BankExchangeApi
         cli.connection.get(*args)
       end
 
-      def json(root: nil)
-        BankExchangeApi::Response::Json.new(get(query), root: root)
+      def json(root: nil, &block)
+        paginator = -> (uri=query) { BankExchangeApi::Response::Json.new(get(uri), root: root) }
+
+        if block_given?
+          paginate(paginator) { |response| yield(response) }
+        else
+          paginate(paginator)
+        end
       end
 
       def params
@@ -28,6 +34,28 @@ module BankExchangeApi
 
       def endpoint
         raise NotImplementedError, __method__
+      end
+
+      private
+
+      # @param paginator [Proc] should accept next page uri
+      # @block if not given - first response return
+      def paginate(paginator)
+        response = paginator.call
+
+        unless block_given?
+          if response.paginatable?
+            cli.warn('Requested resource contains a pagination, please provide a block to process each page. Initial page returned.')
+          end
+          return response
+        end
+
+        yield(response)
+
+        while response.paginatable? do
+          response = paginator.call(response.next_page_url)
+          yield(response)
+        end
       end
     end
   end

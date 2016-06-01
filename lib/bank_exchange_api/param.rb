@@ -8,16 +8,18 @@ module BankExchangeApi
           end
 
           def #{name}
+            value = @#{name} if defined?(@#{name})
+
             @_#{name}_ ||= case #{klass}.name
               when 'Array'
-                Array(@#{name})
+                Array(value)
               when 'String'
-                String(@#{name}) if @#{name}
+                String(value) if value
               when 'Integer'
-                Integer(@#{name}) if @#{name}
+                Integer(value) if value
               when 'Date'
-                if @#{name}
-                  @#{name}.is_a?(Date) ? @#{name} : Date.parse(@#{name}.to_s)
+                if value
+                  value.is_a?(Date) ? value : Date.parse(value.to_s)
                 end
               else
                 raise UnsupportedParamClass, "Provide #{klass} class processing"

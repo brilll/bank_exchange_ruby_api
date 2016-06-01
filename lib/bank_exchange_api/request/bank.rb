@@ -1,7 +1,7 @@
 module BankExchangeApi::Request
   class Bank < Base
     param :swift, String
-    param :currencies, Array
+    param :iso_to, Array
     param :date, Date
     param :fallback_days, Integer
 
@@ -11,7 +11,7 @@ module BankExchangeApi::Request
 
     def params
       {
-          currencies: currencies.join(','),
+          iso_to: iso_to.join(','),
           date: date,
           fallback_days: fallback_days,
       }

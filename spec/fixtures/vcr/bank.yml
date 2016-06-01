@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.bank.exchange/banks/XXXXXXXX?currencies=EUR&date&fallback_days
+    uri: http://api.bank.exchange/banks/XXXXXXXX?date&fallback_days=18&iso_to=CHF
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Accept:
       - application/json
       X-Api-Token:
-      - c64aa982-3720-40de-ab25-51bbbb605dfb
+      - a72e9c23-6544-4d0e-b877-600c0a6a2deb
       X-Client:
       - bank_exchange_ruby_api
       X-Client-Version:
-      - 0.1.0
+      - 1.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 23 Mar 2016 08:30:59 GMT
+      - Wed, 01 Jun 2016 17:37:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -41,17 +41,17 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - W/"fdb1f6896ece9743d949eddf2c795e34"
+      - W/"ff927500284da59ca1de70b5c709bf05"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e0224a26-0d73-4d08-83b8-c8a509ec75eb
+      - 5f397457-b49e-4b7e-ac12-13fdf70a8a67
       X-Runtime:
-      - '0.130551'
+      - '0.031178'
     body:
       encoding: UTF-8
-      string: '{"params":{"swift":"XXXXXXXX","currencies":["EUR"],"date":null,"fallback_days":4},"bank":{"swift":"XXXXXXXX","name":"Board
-        of Governors of the Federal Reserve System","country":"US","currency":"USD","website":"http://www.federalreserve.gov"},"rates":[{"iso_from":"USD","iso_to":"EUR","rate":0.916086478563577,"inverse_rate":1.0916,"date":"2016-12-29"}]}'
+      string: '{"params":{"swift":"XXXXXXXX","iso_to":["CHF"],"date":null,"fallback_days":18},"pagination":{"current_page":1,"last_page":true,"per_page":200,"next_page_url":null},"bank":{"swift":"XXXXXXXX","name":"Board
+        of Governors of the Federal Reserve System","country":"US","currency":"USD","website":"http://www.federalreserve.gov"},"rates":[{"iso_from":"USD","iso_to":"CHF","swift":"XXXXXXXX","date":"2016-05-27","rate":0.9916,"inverse_rate":1.00847115772489}]}'
     http_version: 
-  recorded_at: Wed, 23 Mar 2016 08:30:59 GMT
+  recorded_at: Wed, 01 Jun 2016 17:37:15 GMT
 recorded_with: VCR 3.0.1

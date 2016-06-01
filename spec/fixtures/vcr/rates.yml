@@ -51,6 +51,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"params":{"date":"2016-01-01","swift":[],"iso_from":["BYR"],"iso_to":["USD"],"fallback_days":5},"rates":[{"iso_from":"BYR","iso_to":"USD","rate":5.38531961871937e-05,"inverse_rate":18569.0,"swift":"NBRBBY2X","date":"2016-01-01"}]}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 24 Mar 2016 20:12:37 GMT
 recorded_with: VCR 3.0.1

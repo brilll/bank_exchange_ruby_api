@@ -32,5 +32,21 @@ module BankExchangeApi::Response
     def body
       raise NotImplementedError, __method__
     end
+
+    def pagination
+      raise NotImplementedError, __method__
+    end
+
+    def next_page_url
+      raise NotImplementedError, __method__
+    end
+
+    def paginatable?
+      !next_page_url.nil?
+    end
+
+    def not_paginatable?
+      !paginatable?
+    end
   end
 end

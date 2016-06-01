@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.bank.exchange/rates?date&fallback_days=0&iso_from=&iso_to=&swift=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - a72e9c23-6544-4d0e-b877-600c0a6a2deb
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Jun 2016 17:27:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"4879b66630979dd2e3ec6fe5f9e9e506"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a5c65124-25ea-4571-bdc3-d4bf9da4d931
+      X-Runtime:
+      - '0.200357'
+    body:
+      encoding: UTF-8
+      string: '{"params":{"date":null,"swift":[],"iso_from":[],"iso_to":[],"fallback_days":0},"pagination":{"current_page":1,"last_page":false,"per_page":200,"next_page_url":"http://api.bank.exchange/rates?fallback_days=0&iso_from=&iso_to=&page=2&swift="},"rates":[{"iso_from":"AFN","iso_to":"BTN","swift":"AFIBAFKA","date":"2016-06-01","rate":0.955202312138727,"inverse_rate":1.04689863842663}]}'
+    http_version: 
+  recorded_at: Wed, 01 Jun 2016 17:27:02 GMT
+- request:
+    method: get
+    uri: http://api.bank.exchange/rates?fallback_days=0&iso_from=&iso_to=&page=2&swift=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      X-Api-Token:
+      - a72e9c23-6544-4d0e-b877-600c0a6a2deb
+      X-Client:
+      - bank_exchange_ruby_api
+      X-Client-Version:
+      - 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 01 Jun 2016 17:27:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"8588465344d27269979c397caaedae6f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 29bf7ff4-e9c7-4582-a523-1884efc38854
+      X-Runtime:
+      - '0.159263'
+    body:
+      encoding: UTF-8
+      string: '{"params":{"date":null,"swift":[],"iso_from":[],"iso_to":[],"fallback_days":0},"pagination":{"current_page":2,"last_page":true,"per_page":200,"next_page_url":null},"rates":[{"iso_from":"ZAR","iso_to":"RUB","swift":"SARBZAJP","date":"2016-06-01","rate":4.21595896230333,"inverse_rate":0.237193959652222}]}'
+    http_version:
+  recorded_at: Wed, 01 Jun 2016 17:27:09 GMT
+recorded_with: VCR 3.0.1

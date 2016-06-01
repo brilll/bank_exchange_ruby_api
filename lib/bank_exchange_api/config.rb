@@ -7,7 +7,7 @@ module BankExchangeApi
       names.each do |name|
         class_eval <<-METHODS, __FILE__, __LINE__ + 1
           def #{name}
-            @#{name} || self.class.#{name}
+            (defined?(@#{name}) && @#{name}) || self.class.#{name}
           end
 
           def #{name}!
