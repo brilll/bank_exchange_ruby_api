@@ -28,7 +28,7 @@ module BankExchangeApi::Response
     end
 
     def inspect
-      data
+      body
     end
   end
 end
