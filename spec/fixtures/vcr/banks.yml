@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json
       X-Api-Token:
-      - X-Api-Token
+      - x-api-token
       X-Client:
       - bank_exchange_ruby_api
       X-Client-Version:
