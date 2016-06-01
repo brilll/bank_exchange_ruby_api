@@ -108,7 +108,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}   
 ```
 
-> :warning: Please usepagination by providing a block
+:warning: Please usep gination by providing a block
 
 ```ruby
   data = []
@@ -146,7 +146,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>false, "per_page"=>200, "next_page_url"=>"http://api.bank.exchange/rates?iso_from=&iso_to=&page=2&swift="}    
 ```
 
-> :warning: Please usepagination by providing a block
+:warning: Please usep gination by providing a block
 
 ```ruby
   data = []
@@ -184,7 +184,7 @@ This is the Ruby API client for the BankExchange service. Please read the offici
   {"current_page"=>1, "last_page"=>true, "per_page"=>200, "next_page_url"=>nil}     
 ```
 
-> :warning: Please usepagination by providing a block
+:warning: Please usep gination by providing a block
 
 ```ruby
   data = []
