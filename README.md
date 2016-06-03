@@ -1,4 +1,4 @@
-# Exchange rates API For Ruby
+# 0 dependents Exchange rates API For Ruby
 
 ![bank.exchange logotype](http://bank.exchange/images/mailers/logo.png)
 
