@@ -3,6 +3,7 @@
 ![bank.exchange logotype](http://bank.exchange/images/mailers/logo.png)
 
 [![Build Status](https://semaphoreci.com/api/v1/shlima/bank_exchange_ruby_api/branches/master/badge.svg)](https://semaphoreci.com/shlima/bank_exchange_ruby_api) [![Code Climate](https://codeclimate.com/github/BankExchange/bank_exchange_ruby_api/badges/gpa.svg)](https://codeclimate.com/github/BankExchange/bank_exchange_ruby_api) [![Dependency Status](https://gemnasium.com/BankExchange/bank_exchange_ruby_api.svg)](https://gemnasium.com/BankExchange/bank_exchange_ruby_api)
+[![Downloads counter](https://img.shields.io/gem/dv/bank_exchange_api/stable.svg)
 
 This is the Ruby API client for the BankExchange service. Please read the official documentation to get further information http://bank.exchange/documentation
 
